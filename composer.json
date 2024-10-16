@@ -1,5 +1,5 @@
 {
-    "name": "pds-uk/wp-offload-cloudflare-r2",
+    "name": "pds-uk/wp-offload-cloudflare-r2-plugin",
     "description": "Adds Cloudflare R2 storage support to WP Offload Media.",
     "type": "wordpress-plugin",
     "keywords": ["cloudflare", "r2", "wp-offload-media"],
