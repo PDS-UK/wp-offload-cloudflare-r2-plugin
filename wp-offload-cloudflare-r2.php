@@ -18,21 +18,25 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Check if WP Offload Media is active, if not, deactivate this plugin.
  */
 function wp_offload_r2_check_dependencies() {
-    // Check if WP Offload Media is not installed or inactive.
-    if ( ! is_plugin_active( 'amazon-s3-and-cloudfront/amazon-s3-and-cloudfront.php' ) ) {
+    // Check if either WP Offload Media free or pro version is active.
+    if (
+        ! is_plugin_active( 'amazon-s3-and-cloudfront/amazon-s3-and-cloudfront.php' ) &&
+        ! is_plugin_active( 'amazon-s3-and-cloudfront-pro/amazon-s3-and-cloudfront-pro.php' )
+    ) {
+        // Deactivate this plugin if neither version of WP Offload Media is active.
         deactivate_plugins( plugin_basename( __FILE__ ) );
 
         // Display an admin notice to inform the user
         add_action( 'admin_notices', function() {
             ?>
             <div class="notice notice-error">
-                <p><?php _e( 'WP Offload Cloudflare R2 has been deactivated because WP Offload Media is not installed or active.', 'wp-offload-cloudflare-r2' ); ?></p>
+                <p><?php _e( 'WP Offload Cloudflare R2 has been deactivated because WP Offload Media (either free or pro) is not installed or active.', 'wp-offload-cloudflare-r2' ); ?></p>
             </div>
             <?php
         });
     }
 }
-add_action( 'admin_init', 'wp_offload_r2_check_dependencies' );
+add_action('admin_init', 'wp_offload_r2_check_dependencies');
 
 /**
  * Register Cloudflare R2 provider for WP Offload Media.
