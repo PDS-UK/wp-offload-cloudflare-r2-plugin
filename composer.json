@@ -1,0 +1,29 @@
+{
+    "name": "pds-uk/wp-offload-cloudflare-r2",
+    "description": "Adds Cloudflare R2 storage support to WP Offload Media.",
+    "type": "wordpress-plugin",
+    "keywords": ["cloudflare", "r2", "wp-offload-media"],
+    "homepage": "https://printdatasolutions.co.uk",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Cameron Stephen",
+            "email": "web.support@printdatasolutions.co.uk",
+            "homepage": "https://printdatasolutions.co.uk"
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.9"
+    },
+    "extra": {
+        "installer-name": "wp-offload-cloudflare-r2",
+        "installer-paths": {
+            "wp-content/plugins/{$name}/": ["type:wordpress-plugin"]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "PDS-UK\\WpOffloadCloudflareR2\\": "includes/"
+        }
+    }
+}
