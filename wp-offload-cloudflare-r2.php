@@ -67,7 +67,7 @@ function wp_offload_create_symbolic_link_for_r2_icon()
         symlink($target_file, $link_location);
     }
 }
-add_action('init', 'create_symbolic_link_for_r2_icon');
+add_action('init', 'wp_offload_create_symbolic_link_for_r2_icon');
 
 /**
  * Modify gzip MIME types to exclude SVG from being gzipped.
