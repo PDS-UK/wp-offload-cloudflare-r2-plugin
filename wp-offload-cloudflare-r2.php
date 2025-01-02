@@ -43,7 +43,7 @@ add_action('admin_init', 'wp_offload_r2_check_dependencies');
  */
 function wp_offload_add_cloudflare_r2_provider($providers)
 {
-    if (! class_exists('Cloudflare_Provider')) {
+    if (!class_exists('DeliciousBrains\WP_Offload_Media\Providers\Storage\Cloudflare_Provider')) {
         require_once plugin_dir_path(__FILE__) . 'includes/cloudflare-provider.php';
     }
 

@@ -20,11 +20,5 @@
         "installer-paths": {
             "wp-content/plugins/{$name}/": ["type:wordpress-plugin"]
         }
-    },
-    "autoload": {
-        "psr-4": {
-            "PDSUK\\WpOffloadCloudflareR2\\": "includes/",
-            "DeliciousBrains\\WP_Offload_Media\\Providers\\Storage\\": "web/app/plugins/wp-offload-cloudflare-r2/includes/"
-        }
     }
 }
