@@ -23,7 +23,8 @@
     },
     "autoload": {
         "psr-4": {
-            "PDS-UK\\WpOffloadCloudflareR2\\": "includes/"
+            "PDSUK\\WpOffloadCloudflareR2\\": "includes/",
+            "DeliciousBrains\\WP_Offload_Media\\Providers\\Storage\\": "includes/"
         }
     }
 }
