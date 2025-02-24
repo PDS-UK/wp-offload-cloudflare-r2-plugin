@@ -82,19 +82,11 @@ add_filter('as3cf_gzip_mime_types', 'wp_offload_modify_gzip_mime_types', 10);
 
 
 /**
- * This filter allows your limit specific mime types of files that
- * can be uploaded to the bucket. They will still be uploaded to the
- * WordPress media library but ignored from the offload process.
- *
- * @handles `as3cf_allowed_mime_types`
- *
- * @param array $types
- *
- * @return array
+ * Add SVG To Default Mimes
  */
-function wp_offload_allowed_mime_types( $types ) {
-    $types['svg'] = 'image/svg+xml';
+function wp_offload_amend_default_mimes( $mimes ) {
+    $mimes['svg'] = 'image/svg+xml';
 
-    return $types;
+    return $mimes;
 }
-add_filter( 'as3cf_allowed_mime_types', 'wp_offload_allowed_mime_types', 10, 1 );
+add_filter('upload_mimes', 'wp_offload_amend_default_mimes');
