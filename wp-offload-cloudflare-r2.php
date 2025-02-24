@@ -97,4 +97,4 @@ function wp_offload_allowed_mime_types( $types ) {
 
     return $types;
 }
-add_filter( 'as3cf_allowed_mime_types', 'wp_offload_allowed_mime_types' ), 10, 1 );
+add_filter( 'as3cf_allowed_mime_types', 'wp_offload_allowed_mime_types', 10, 1 );
